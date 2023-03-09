@@ -1,0 +1,34 @@
+header{
+background-color: cornflowerblue;
+display: block;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+footer{
+background-color: gray;
+height: 100px;
+position: relative;
+top: 400px;
+
+}
+main{
+ min-height:calc(100vh -100px); 
+ margin-top: 200px ; 
+ 
+
+
+
+}
+h2{
+color: rgb(105, 5, 5);
+
+
+
+
+
+
+
+
+}
