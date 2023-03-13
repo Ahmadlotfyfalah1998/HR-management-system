@@ -26,13 +26,9 @@ this.salary=this.salary*(1-0.075)
 
 return  Math.floor(this.salary)
 }
-// Employee.prototype.render= function (){
-// document.write(`<h3>name is : ${this.fullName} and his/her salary is = ${this.salary}</h3>`)
 
-
-// }
 let divvEl = document.getElementById("divv")
-//let mainEl =document.getElementsByTagName("main")
+
 let sectionEl =document.getElementById("secc")
  let ghaziSamer = new Employee (1000,"Ghazi Samer","Administration","Senior","asset/Ghazi.jpg")
 let lanaAli = new Employee (1001,"Lana Ali","Finance","Senior","asset/Lana.jpg")
@@ -55,36 +51,10 @@ Employee.prototype.render= function(){
      divvEl.appendChild(infoEl)
      
   
-    //let nameEl = document.createElement('h3') 
-//nameEl.textContent=`the name is ${this.fullName}`
-//divvEl.appendChild(nameEl)
-
-//let departmentEl=document.createElement('h4')
-//departmentEl.textContent=`department : ${this.department}`
-//divvEl.appendChild(departmentEl)
-
-//let levelEl = document.createElement('h4')
-//levelEl.textContent= `level : ${this.level}`
-//divvEl.appendChild(levelEl)
-
-
-
-
-
-
-
-
-
- //let salaryEl = document.createElement('h4')
- //salaryEl.textContent=`salary is ${this.salaryCalculation()}`
- //divvEl.appendChild(salaryEl)
+    
   
     }
-// for (let index = 0; index < allEmployees.length; index++) {
-//     allEmployees[index].salaryCalculation()
-//     allEmployees[index].render()
-    
-// 
+
 Employee.prototype.idGenerator = function (){
     this.id= Math.floor(Math.random()*9000+1000)
     
@@ -111,32 +81,65 @@ let level = event.target.level.value
 let department = event.target.departmenttt.value
 let imageUrl = event.target.img.value
 
-console.log(fullName,department,level,imageUrl)
 
 let newemp = new Employee(id,fullName,department,level,imageUrl)
 
-
+//console.log(allEmployees)
   
 
 
 
 
 newemp.render()
+saveData(allEmployees)
+
+// for (let index = 0; index < allEmployees.length; index++) {
+//     allEmployees[index].render()
+    
+// }
+
 
 }
 
 
-ghaziSamer.render()
-lanaAli.render()
-tamaraAyoub.render()
-safiWalid.render()
-omerZaid.render()
-ranaSaleh.render()
-hadiAhmad.render()
-
-//ghaziSamer.render()
-// for (let index = 0; index < allEmployees.length; index++) {
-// allEmployees[index].render()
+ ghaziSamer.render()
+ lanaAli.render()
+ tamaraAyoub.render()
+ safiWalid.render()
+ omerZaid.render()
+ ranaSaleh.render()
+ hadiAhmad.render()
 
 
-console.log(allEmployees)
+
+
+
+
+ function saveData(data){
+
+     let stringArr = JSON.stringify(data)
+     localStorage.setItem('employees',stringArr)
+
+
+ }
+
+function gitData(){
+let retArr = localStorage.getItem('employees')
+console.log(retArr)
+let objArr = JSON.parse(retArr)
+console.log(objArr)
+}
+
+
+ 
+
+
+
+//gitData()
+
+
+//  for (let o = 0; o < allEmployees.length; o++) {
+//    console.log(allEmployees[o])
+    
+ //}
+ //localStorage.clear()

@@ -9,6 +9,8 @@ height: 100px;
 display: flex;
 justify-content: center;
 align-items: center; 
+flex-direction: column;
+
 }
 main{
  background-color:#a0d996; 
@@ -37,13 +39,6 @@ align-items: center;
 
 h2{
 color: rgb(7, 55, 138);
-
-
-
-
-
-
-
 
 }
 section{
@@ -81,4 +76,10 @@ color: rgb(52, 2, 93);
 font-family: 'Sono', sans-serif;
 
 
+}
+a{
+
+
+background-color: rgb(240, 139, 139);
+border-radius: 5px;
 }
