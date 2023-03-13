@@ -1,0 +1,57 @@
+header{
+
+    background-color: #f6e3c5;
+    display: block;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column
+
+}
+
+    main{
+        background-color:#a0d996; 
+           display: flex;
+           justify-content: center;
+       
+           
+           
+           min-height: calc(100vh);
+           
+       
+           
+       }  
+
+
+footer{
+    background-color:#4cacbc;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    }
+    h2{
+        color: rgb(7, 55, 138);
+        
+        }
+
+
+        table{
+text-align: center;
+height: 300px;
+width: 50%;
+background-color: #eab663;
+margin-top: 70px;
+
+
+
+        }
+        a{
+
+            background-color: rgb(240, 139, 139);
+            border-radius: 5px;
+
+        }
