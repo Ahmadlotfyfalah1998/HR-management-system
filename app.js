@@ -1,12 +1,12 @@
 'use strict';
-const allEmployees =[]
+let allEmployees =[]
 function Employee (id,fullName,department,level,imageUrl,salary){
 this.id=id;
 this.fullName= fullName;
 this.department=department;
 this.level=level;
 this.imageUrl=imageUrl;
-this.salary=0;
+this.salary= 0;
 allEmployees.push(this)
 }
 
@@ -26,6 +26,10 @@ this.salary=this.salary*(1-0.075)
 
 return  Math.floor(this.salary)
 }
+
+
+
+
 
 let divvEl = document.getElementById("divv")
 
@@ -68,10 +72,39 @@ for (let j = 0;j < allEmployees.length;j++) {
 }
  return this.id
 }
+
+
 let form = document.getElementById("form")
 
 
 form.addEventListener("submit",submitHandeler)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////submit\\\\\\\\\\\\\
 function submitHandeler(event){
 event.preventDefault()
 let id=5555
@@ -87,34 +120,42 @@ let newemp = new Employee(id,fullName,department,level,imageUrl)
 //console.log(allEmployees)
   
 
-
-
-
 newemp.render()
-saveData(allEmployees)
-
-// for (let index = 0; index < allEmployees.length; index++) {
-//     allEmployees[index].render()
+   saveData(allEmployees)
+//gitData()
     
-// }
+
 
 
 }
 
 
- ghaziSamer.render()
- lanaAli.render()
- tamaraAyoub.render()
- safiWalid.render()
- omerZaid.render()
- ranaSaleh.render()
- hadiAhmad.render()
 
 
 
 
 
 
+
+
+
+
+
+
+
+//  ghaziSamer.render()
+//  lanaAli.render()
+//  tamaraAyoub.render()
+//  safiWalid.render()
+//  omerZaid.render()
+//  ranaSaleh.render()
+//  hadiAhmad.render()
+
+
+
+
+
+///////////save\\\\\\\\\\\
  function saveData(data){
 
      let stringArr = JSON.stringify(data)
@@ -125,21 +166,39 @@ saveData(allEmployees)
 
 function gitData(){
 let retArr = localStorage.getItem('employees')
-console.log(retArr)
+//console.log(retArr)
 let objArr = JSON.parse(retArr)
 console.log(objArr)
+
+if (objArr != null) {
+  allEmployees = [] ;
+for (let z = 0; z < objArr.length; z++) {
+   new Employee (objArr[z].id,objArr[z].fullName,objArr[z].department,objArr[z].level,objArr[z].imageUrl,objArr[z].salary) 
+    
 }
 
 
+
+}
+
+
+
+renderAll()
+}
+
+gitData()
  
 
 
 
-//gitData()
 
-
-//  for (let o = 0; o < allEmployees.length; o++) {
-//    console.log(allEmployees[o])
+ function renderAll (){
+for (let p = 0; p < allEmployees.length; p++) {
+    allEmployees[p].render()
     
- //}
- //localStorage.clear()
+}
+ }
+
+//saveData(allEmployees)
+
+ //renderAll(allEmployees)
